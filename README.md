@@ -2,6 +2,10 @@
 
 Anonymize Comment IPs is a WordPress plugin that efficiently anonymizes comment IP addresses to comply with GDPR.
 
+## Disclaimer
+
+This plugin is provided "as is" without any guarantees or warranty. In association with the product, the author makes no warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, of title, or of noninfringement of third-party rights. Use of the product by a user is at the user’s risk.
+
 ## Description
 
 This plugin anonymizes both IPv4 and IPv6 addresses in comments to ensure compliance with GDPR regulations. It provides an admin interface to manually anonymize all existing comment IPs in the database.
