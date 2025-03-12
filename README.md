@@ -1,62 +1,111 @@
-# Anonymize Comment IPs
+# **Anonymize Comment IPs**  
 
-Anonymize Comment IPs is a WordPress plugin that efficiently anonymizes comment IP addresses to comply with GDPR.
+**Anonymize Comment IPs** is a **lightweight and GDPR-compliant** WordPress plugin that **automatically anonymizes** comment IP addresses and provides a tool for **bulk anonymization of existing IPs**.
 
-## Disclaimer
+---
 
-This plugin is provided "as is" without any guarantees or warranty. In association with the product, the author makes no warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, of title, or of noninfringement of third-party rights. Use of the product by a user is at the user’s risk.
+## **Disclaimer**  
 
-## Description
+This plugin is provided **"as is"** without warranties or guarantees of any kind. The author disclaims all implied warranties, including but not limited to merchantability, fitness for a particular purpose, and non-infringement of third-party rights. **Use of this plugin is at the user's own risk.**
 
-This plugin anonymizes both IPv4 and IPv6 addresses in comments to ensure compliance with GDPR regulations. It provides an admin interface to manually anonymize all existing comment IPs in the database.
+---
 
-## Installation
+## **Description**  
 
-1. Upload the plugin files to the `/wp-content/plugins/anonymize-comment-ip` directory, or install the plugin through the WordPress plugins screen directly.
-2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Use the 'Anonymize IPs' menu item in the WordPress admin to manually anonymize existing comment IPs.
+WordPress **stores commenters' IP addresses** by default, which can raise **privacy concerns** and **GDPR compliance issues**.  
+This plugin ensures compliance by:  
 
-## Usage
+✔ **Automatically anonymizing all new comment IPs** before they are stored.  
+✔ **Providing an admin tool** to **bulk anonymize** existing comment IPs in the database.  
+✔ **Supporting IPv4 & IPv6 anonymization** for maximum compatibility.  
 
-Once activated, the plugin will automatically anonymize IP addresses for new comments. To anonymize existing comment IPs, navigate to the 'Anonymize IPs' menu item in the WordPress admin and click the 'Start IP Anonymization' button.
+---
 
-## Functions
+## **Installation**  
 
-### `pixovoid_anonymize_ip($ip)`
+1. **Upload & Install**  
+   - Upload the plugin folder to `/wp-content/plugins/anonymize-comment-ip/`,  
+   - Or install it directly via the **WordPress Plugin Repository**.  
 
-Anonymizes an IP address (IPv4 & IPv6).
+2. **Activate the Plugin**  
+   - Go to **Plugins → Installed Plugins** and activate **Anonymize Comment IPs**.  
 
-- **Parameters:**
-  - `$ip` (string): The original IP address.
-- **Returns:**
-  - (string): Anonymized IP address or default if invalid.
+3. **Automatic Anonymization Starts Immediately**  
+   - All **new comments** will have their IPs anonymized automatically.  
+   - To anonymize **existing IPs**, use the **admin tool** (see below).  
 
-### `pixovoid_filter_comment_ip($comment_ip)`
+---
 
-Filters new comment IPs before saving.
+## **Usage**  
 
-- **Parameters:**
-  - `$comment_ip` (string): The original comment IP.
-- **Returns:**
-  - (string): Anonymized IP.
+### **Automatic Anonymization**  
+- The plugin **automatically anonymizes** all **new** comment IPs **before** they are saved to the database.  
 
-### `pixovoid_anonymize_existing_ips()`
+### **Bulk Anonymization of Existing IPs**  
+1. Go to **WordPress Dashboard → Anonymize IPs**.  
+2. Click the **"Start Anonymization"** button to anonymize **all previously stored** comment IPs.  
+3. A confirmation message will display the **number of anonymized IPs**.  
 
-Anonymizes all existing comment IPs in the database.
+---
 
-- **Returns:**
-  - (int): Number of updated comments.
+## **Features**  
 
-## License
+✔ **Automatic GDPR-Compliant IP Anonymization** – No user intervention required.  
+✔ **Bulk Anonymization** – One-click anonymization of all stored comment IPs.  
+✔ **Supports IPv4 & IPv6** – Ensures full compatibility.  
+✔ **Optimized Database Performance** – Only updates necessary records.  
+✔ **Admin-Friendly UI** – Easily manage everything in the WordPress dashboard.  
+✔ **Lightweight & Efficient** – Minimal performance impact.  
 
-This plugin is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+---
 
-## Author
+## **Function Reference**  
 
-[PixoVoid.net](https://pixovoid.net/)
+### **`pixovoid_anonymize_ip($ip)`**  
+Anonymizes an IP address (supports both IPv4 & IPv6).  
 
-## Changelog
+- **Parameter:**  
+  - `$ip` *(string)* – The original IP address.  
+- **Returns:**  
+  - *(string)* – The anonymized IP address.  
 
-### 1.1.0
+**Example usage:**  
+```php
+$ip = '192.168.1.45';
+$anonymized_ip = pixovoid_anonymize_ip($ip); 
+// Output: 192.168.1.0
+```
 
-- Initial release.
+---
+
+### **`pixovoid_filter_comment_ip($comment_ip)`**  
+Filters and anonymizes IPs for **new** comments **before saving** them.  
+
+- **Parameter:**  
+  - `$comment_ip` *(string)* – The original comment IP.  
+- **Returns:**  
+  - *(string)* – Anonymized IP.  
+
+---
+
+### **`pixovoid_anonymize_existing_ips()`**  
+Anonymizes **all previously stored** comment IPs in the database.  
+
+- **Returns:**  
+  - *(int)* – The number of updated comments.  
+
+---
+
+## **License**  
+
+This plugin is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more information.  
+
+---
+
+## **Author**  
+
+Developed by **[PixoVoid.net](https://pixovoid.net/)**.  
+
+---
+
+### 🚀 **Ensure GDPR compliance effortlessly with Anonymize Comment IPs!** 🚀  
